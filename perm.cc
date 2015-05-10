@@ -1,6 +1,7 @@
 // Copyright Xiaobo Fan 2010
 //
 //
+#include <assert.h>
 #include <stdio.h>
 #include <time.h>
 #include <math.h>
@@ -12,10 +13,10 @@
 #include <fstream>
 #include <algorithm>
 
-#include <boost/unordered_set.hpp>
+#include <unordered_set>
 
 using namespace std;
-typedef boost::unordered_set<string> Dict;
+typedef std::unordered_set<string> Dict;
 
 void search(string letters, int i, int depth, const Dict& dict) {
   if (i == depth) {
@@ -26,7 +27,7 @@ void search(string letters, int i, int depth, const Dict& dict) {
     }
     return;
   }
-  boost::unordered_set<char> used;
+  std::unordered_set<char> used;
   for (int j = i; j < letters.size(); ++j) {
     char t = letters[j];
     if (used.find(t) != used.end()) continue;
