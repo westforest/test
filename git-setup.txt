@@ -1,0 +1,17 @@
+ git config --global user.name "<Name>"
+ git config --global user.email "aa@email.com"
+ git config --global core.editor vim
+ cd <dir>
+ git init
+ git add a.cc
+ git status
+ git commit -m 'all words'
+ git remote add origin git@github.com:westforest/test.git
+ git remove -v
+ git push origin master
+ git status
+ git config --global diff.tool tkdiff
+ git config diff.tool meld
+ vi a.cc
+ git config --global difftool.prompt false
+ git difftool
