@@ -1,3 +1,5 @@
+Local Init:
+-----------
  git config --global user.name "<Name>"
  git config --global user.email "aa@email.com"
  git config --global core.editor vim
@@ -15,3 +17,27 @@
  vi a.cc
  git config --global difftool.prompt false
  git difftool
+
+On server:
+-----------
+cd /opt/git
+mkdir project.git
+cd project.git
+git init --bare
+
+On client:
+-----------
+cd myproject
+git init
+git add .
+git commit -m 'initial commit'
+git remote add origin <user>@server:/opt/git/project.git
+git push origin master
+
+On another client:
+-----------
+git clone <user>@server:/opt/git/project.git
+cd project
+echo "readme" >> README
+git commit -am 'fix for the README file'
+git push origin master
